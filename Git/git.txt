@@ -1,0 +1,40 @@
+
+
+git config --global user.name "<NOM prenom>"
+git config --global user.email <mail>
+
+git config --global core.autocrlf false
+
+
+git init
+
+git status
+
+git log
+
+Git ls
+
+Git ll
+
+Git add <fichier>
+
+Git add <dossier>/
+
+Git commit -am "text"
+
+Git fetch
+
+Git push
+
+Git pull
+
+git fetch && git rebase origin/master
+
+
+
+
+git checkout –b <branche>    New branch
+git branch <branche>
+git checkout <branche>
+
+git push --set-upstream origin <branche>
