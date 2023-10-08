@@ -1,0 +1,253 @@
+1 exercice vecteur:
+
+c : chaine[];
+i : entier;
+
+i:= 0;
+
+tantque i < longueur(c) faire
+
+    affiche(c[i]);
+    i:= i+1;
+
+finfaire
+
+--------------------------------- mauvais idee
+
+c : chaine[];
+i : entier;
+
+i:= 0;
+
+tantque i =< longueur(c) faire
+
+affiche(c[longueur(c)]);
+longueur(c):= longueur(c) - 1;
+
+finfaire
+
+
+
+
+2 exercice vecteur:
+
+
+
+Fonction somme(vecteur :entier[]; ) :entier;
+i, somme :entier;
+
+    somme := 0;
+    i:=O;
+defonc
+    tantque i < longueur(vecteur) faire
+        somme := somme + vecteur[i];
+        i:= i + 1;
+    finfaire
+    
+    Retourner somme
+finfonc
+
+
+---------------------------------
+
+
+Fonction somme(vecteur :entier[]; ) :entier;
+i, somme :entier;
+
+    somme := 0;
+    i:=O;
+defonc
+    tantque i < longueur(vecteur) faire
+        somme := somme + vecteur[i];
+        i:= i + 2;
+    finfaire
+    
+    Retourner somme
+finfonc
+
+
+
+3 exercice vecteur:     ????????????????????????????????????????????????????????
+
+Fonction compteOccurrencesCaractere(caractere : chaîne; vecteur : chaine []) : entier
+
+caractere,TrouverCaractere :chaine;
+compteur :entier;
+
+compteur:= 0;
+
+tantque
+    si caractere = TrouverCaractere alors
+        compteur := compteur + 1;
+    finsi
+
+
+
+
+
+4 exercice vecteur:
+
+fonction vecteurMax ( v : entier[];): entier;
+
+max := v[1];
+i:= 2;
+
+tantque i < longueur(v) faire
+    si v[i] > max alors
+        affiche('il est max')
+        max:= v[i];
+    finsi
+finfaire
+
+Retourner max;
+
+
+
+5 exercice vecteur:
+
+
+fonction n(vecteur : entier[]; valeur : entier) : booléen;
+
+debfonc
+    i: entier;
+    i:= 0;
+
+    tantque i < longueur(vecteur) faire
+
+        si i = valeur alors
+
+            Retourner vrai;
+
+        finsi
+        i:= i + 1;
+
+    finfaire
+
+    Retourner faux;
+finfonc
+
+
+6 exercice vecteur:
+
+Ecrire une fonction qui renvoie l'indice d'une valeur passée en paramètre dans un vecteur d'entier passé également en paramètre si la valeur est trouvée dans le vecteur. Si la valeur n'est pas trouvée, on renverra -1.
+
+
+fonction n(vecteur : entier[]; valeur : entier) : entier;
+
+debfonc
+    i: entier;
+    i:= 0;
+
+    tantque i < longueur(vecteur) faire
+
+        si vecteur[i] = valeur alors
+
+            affiche('valeur trouve' + i);
+            Retourner i;
+
+        finsi
+        i:= i + 1;
+
+    finfaire
+    Retourner -1;
+    
+finfonc
+
+
+7 exercice vecteur: MEME 4 exercice
+
+fonction vecteurMax ( v : entier[];): entier;
+
+    max := v[1];
+    i:= 2;
+
+    tantque i < longueur(v) faire
+        si v[i] > max alors
+            affiche('il est max')
+            max:= v[i];
+        finsi
+        i:= i + 1;
+    finfaire
+
+    Retourner max;
+
+finfonc
+
+
+8 exercice vecteur :
+
+
+fonction trie(vecteur: entier[];) :booléen;
+i: entier;
+i:=0;
+
+tantque i < longueur(vecteur) faire
+
+    si vecteur[i] > vecteur[i + 1] alors
+        Retourner faux;
+    finsi
+
+finfaire
+Retourner vrai;
+
+
+9 exercice vecteur :
+
+
+fonction n(vecteur : entier[]; valeur : entier) : booléen;
+
+debfonc
+    i: entier;
+    i:= 0;
+
+    tantque i < longueur(vecteur) faire
+
+        si vecteur[i] > vecteur[i + 1] alors
+            Retourner faux;
+
+            si i = valeur alors
+
+                Retourner vrai;
+
+            finsi
+
+        finsi
+
+        i:= i + 1;
+
+    finfaire
+
+    Retourner faux;
+finfonc
+
+
+10 exercice vecteur :
+
+fonction triRemplacement(v : entier[]) : entier[]
+
+debfonc
+    i,j: entier;
+    i:= 0;
+
+    tantque i < longueur(vecteur) faire
+
+        affiche(v[i])
+        j:= i + 1;
+
+            tantque j < v[i] faire
+
+                si v[i] > v[j] alors
+
+                affiche(v[j]);
+
+                finsi
+
+            finfaire
+
+        i:= i + 1;
+
+    finfaire
+
+    
+finfonc
+

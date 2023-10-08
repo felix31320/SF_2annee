@@ -1,0 +1,420 @@
+
+1 exercice algo :
+
+AnneeNai, AnneeEnCours,age : entier;
+
+afficher(' ton annee de naissannce');
+lire(AnneeNai);
+afficher(' et l'annee en cours ?');
+lire(AnneeEnCours)
+
+age := anneeEnCours - AnneeNai;
+afficher ('voici ton age est' age );
+
+
+2 exercice algo :
+
+AnneeNai, AnneeEnCours,NbEnfant, age : entier;
+Nom,PrenomEnfant ; chaine;
+
+afficher(' ton annee de naissannce');
+lire(AnneeNai);
+afficher(' et l'annee en cours ?');
+lire(AnneeEnCours)
+
+age := anneeEnCours - AnneeNai;
+afficher ('voici ton age est' age );
+
+afficher('Votre nom ?');
+lire(Nom);
+afficher('combien avez-vous les enfants');
+lire(NbEnfant);
+
+i:= 1;
+tantque i < nbEnfant faire
+
+afficher('le prenom de ton enfant et quelle annee de naissance ?')
+lire(PrenomEnfant);
+lire(age);
+afficher('ton enfant ' PrenomEnfant ' a ' age ' ans');
+
+finfaire
+
+
+3 exercice algo :
+
+NbPhoto: entier;
+prix: reel;
+
+afficher('combien de photocopies avez vous');
+lire(NbPhoto);
+
+si NbPhoto <= 10 alors 
+
+prix := 1*NbPhoto;
+afficher('le prix est' prix );
+
+sinon si NbPhoto <= 30 alors
+
+prix := 10 + (NbPhoto - 10)*0,5;
+afficher('le prix est' prix );
+
+sinon  
+
+prix := 20 + (NbPhoto - 30)*0,2;
+afficher('le prix est' prix );
+
+finsi
+
+
+4 exercice algo :
+
+NumeroMois: entier;
+
+afficher('Aujourd'hui on est quelle saison ?');
+lire(NumeroMois);
+
+si NumeroMois >= 3 ou < 6 alors 
+
+afficher('Hiver');
+
+si NumeroMois >= 6 ou < 9 alors
+
+afficher('Printemps');
+
+sinon si NumeroMois >= 9 ou < 12 alors
+
+afficher('Ete');
+
+sinon NumeroMois <= 12
+
+afficher('Automone');
+
+
+finsi
+
+
+5 exercice algo :
+
+
+anneeNaissance,anneeEnCours,age,nbEnfants,i : entier;
+prenom : chaine;
+
+fonction poserQuestion(msg : chaine) : entier;
+resultat : entier;
+debfonc
+	afficher(msg);
+	lire(resultat);
+	retour resultat;
+finfonc
+
+fonction calculerAge(anneeNaissance : entier, anneeEnCours : entier) : entier;
+age : entier;
+debfonc
+	age := anneeNaissance - anneeEncours;
+	retour age;
+finfonc
+
+anneeEncours := poserQuestion('Quel est l'année en cours ?');
+anneeNaissance := poserQuestion('Quel est ton année de naissance ?');
+afficher('Tu as ' + calculerAge(anneeNaissance, anneeEncours) ' !');
+nbEnfants := poserQuestion('As-tu combien d'enfants ?');
+
+i := 1;
+tantque i <= nbEnfants faire
+  	prenom := poserQuestion('Quel est le prénom de l'enfant '+ i +'?');
+	anneeNaissance := poserQuestion('Quel est l'année de naissance de '+ prenom +' ?');
+        age = calculerAge(anneeNaissance, anneeEncours);
+	afficher(prenom + ' a ' + age + ' ans!');
+	i:= i +1;
+finfaire
+
+
+6 exercice algo :
+
+
+jour, open, close : chaine;
+heure : entier;
+
+open := 'boulangerie est ouverte';
+close := 'boulangerie est fermee';
+
+si (jour ='lundi') alors
+
+	afficher(close);
+
+	sinon 
+	afficher('quelle est l'heure');
+	lire(heure);
+
+	si (heure < 7 ou (heure > 13 et heure < 16) ou heure > 19) alors
+
+		afficher(close);
+		sinon si (heure >= 7 et heure 13) alors
+		afficher(open);
+		sinon si(jour = dimanche) alors
+		afficher(close)
+		sinon
+		afficher(open)
+
+	finsi
+finsi
+
+
+
+
+7 exercice algo : RIP correction !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+fonction calculer( a : entier; b : entier;): entier;
+divisible: entier;
+
+
+debfonc
+	divisible := a / b ;
+    retour divisible;
+finfonc
+
+si divisible = 4 alors 
+
+afficher('annee est bissextile');
+
+sinon 
+
+afficher('rien');
+
+
+
+
+
+
+8 exercice algo : RIP correction !!!!!!!!!!!!!!!!
+
+
+fonction algoSuper(i :entier;) :entier;
+
+debfonc
+
+
+
+	si  i < 25 alors
+	retourne 25;
+	sinon
+	finsi
+	retour i;
+    
+
+finfonc
+
+9 exercice algo :
+
+fonction plusPetit(a: entier; b: entier;) :entier;
+
+defonc
+
+	lire(a)
+	lire(b)
+
+	si a > b alors
+	afficher('b est plus petit')
+	retour a;
+	finsi;
+afficher('a est plus petit')
+retour b;
+
+
+finfonc
+
+
+10 exercice algo :
+
+fonction plusPetit(a: entier; b: entier; c: entier;) :entier;
+
+defonc
+
+	lire(a)
+	lire(b)
+	lire(c)
+
+si a > b et b < c alors
+afficher('b est plus petit');
+sinon si b > a et a < c 
+afficher('a est plus petit');
+sinon
+afficher('c est plus petit');
+finsi
+
+finfonc
+
+
+11 exercice algo :
+
+type date1 = structure 
+    jour : entier;
+    mois : entier;
+    annee : entier;
+fin;
+
+type date2 = structure 
+    jour : entier;
+    mois : entier;
+    annee : entier;
+fin;
+
+
+fonction EstAnterieure(date1 :entier; date2 :entier;) :entier;
+
+si date1.annee <= date2.annee alors
+afficher('vrai');
+	si date1.mois <= date2.mois alors
+	afficher('vrai');
+		si date1.jour <= date2.jour alors
+		afficher('vrai');
+		sinon
+		afficher('faux');
+	sinon
+	afficher('faux');
+sinon
+afficher('faux');
+
+
+12 exercice algo :
+
+
+procedure CalculerSomme()
+
+x, somme, i: entier;
+somme:=0;
+i:=1;
+deproc
+
+	tantque i < x faire
+
+		somme := somme + i;
+
+	finfaire
+
+finproc
+
+
+13 exercice algo :
+
+
+fonction entre(x :entier;) :entier;
+
+si x < 5 alors
+afficher(' plus grand !');
+sinon si x > 10 alors
+afficher(' plus petit');
+sinon si x > 5 et x < 10 alors
+afficher(' le nombre accepte');
+
+
+finsi
+
+
+
+14 exercice algo :
+
+
+fonction Factorielle(x: entier;) entier;
+
+somme, i: entier;
+somme:=1;
+i:=1;
+defonc
+
+	tantque i < x faire
+
+		somme := somme * i;
+		i := i + 1;
+	finfaire
+
+finfonc
+
+
+15 exercice algo :
+
+fonction (montant: entier; , total: entier;) :entier;
+
+remise := montant - total;
+billets10 := 0;
+billets5 := 0;
+piece := 0;
+
+tantque remise >= 10 faire
+
+	billets10 := billets10 +1;
+	remise := remise -10;
+
+finfaire
+
+tantque remise >= 5 faire
+
+	billets5 := billets5 +1;
+	remise := remise -5;
+
+finfaire
+
+tantque remise >= 0 faire
+
+	piece := piece +1;
+	remise := remise -1;
+
+finfaire
+
+afficher(billets10);
+afficher(billets5);
+afficher(piece);
+
+
+
+16 exercice algo :
+
+fonction longueur(c : chaîne) : entier ;
+fonction remplaceEtoile(caractereAChanger : chaine; phrase : chaine;)
+
+
+longueurPhrase := longueur(phrase);
+nouvellePhrase := "";
+
+i := 1;
+tantque i =< longueurPhrase faire
+
+caractereCourant := phrase[i]
+
+	Si caractereCourant = caractereAChanger Alors
+		nouvellePhrase := nouvellePhrase + "*"
+	Sinon
+		nouvellePhrase := nouvellePhrase + caractereCourant
+	Fin Si
+Fin Pour
+Retourner nouvellePhrase
+finfonc
+
+
+
+17 exercice algo :
+
+fonction majuscule(c : chaîne) : entier ;
+
+procédure majusculeMot(phrase : chaîne);
+
+deproc
+
+longueurPhrase := majuscule(phrase);
+nouvellePhrase := "";
+
+i := 1;
+tantque i =< longueurPhrase faire
+
+caractereCourant := phrase[i]
+
+	Si caractereCourant = caractereAChanger Alors
+		nouvellePhrase := nouvellePhrase + "*"
+	Sinon
+		nouvellePhrase := nouvellePhrase + caractereCourant
+	Fin Si
+Fin Pour
+Retourner nouvellePhrase
+finproc
