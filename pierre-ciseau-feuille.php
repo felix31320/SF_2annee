@@ -4,7 +4,6 @@ if (isset($_POST['choix'])) {
 
     $choix = $_POST['choix'];
 
-
     $Ordinateur = choixOrdinateur();
 
     $resultat = Resultat($choix, $Ordinateur);
@@ -33,9 +32,8 @@ function Resultat($choix, $Ordinateur) {
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
