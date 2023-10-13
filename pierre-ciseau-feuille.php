@@ -1,12 +1,11 @@
 <?php
-echo '55555555555555555555555555555555555555555555555555';
+
 if (isset($_POST['choix'])) {
 
     $choix = $_POST['choix'];
 
 
-    $options = ["pierre", "papier", "ciseaux"];
-    $Ordinateur = array_rand($options);
+    $Ordinateur = choixOrdinateur();
 
     $resultat = Resultat($choix, $Ordinateur);
 
@@ -14,6 +13,12 @@ if (isset($_POST['choix'])) {
     echo 'le choix d ordianteur : '.$Ordinateur.'<br>';
 
 } 
+
+function choixOrdinateur() {
+    $options = ["pierre", "papier", "ciseaux"];
+    $choix = array_rand($options);
+    return $options[$choix];
+}
 
 
 function Resultat($choix, $Ordinateur) {
@@ -39,49 +44,12 @@ function Resultat($choix, $Ordinateur) {
 
     <form action="pierre-ciseau-feuille.php" method="POST">
         
-        <input type="radio" name="choix" value="pierre" >Pierre
-        <input type="radio" name="choix" value="papier" >Papier
-        <input type="radio" name="choix" value="ciseaux" >Ciseaux
+        <input type="radio" name="choix" value="1" >Pierre
+        <input type="radio" name="choix" value="2" >Papier
+        <input type="radio" name="choix" value="3" >Ciseaux
 
         <input type="submit" name="submit" value="Jouer">
     </form>
     
 </body>
 </html>
-
-
-
-
-
-
-
-
-<?php
-
-// $random = rand(1,3);
-
-// if (isset($_POST['submit']) && $random == 1) {
-//     echo 'ordinateur choisit : Pierre<br>';
-// }
-// if (isset($_POST['submit']) && $random == 2) {
-//     echo 'ordinateur choisit : Ciseau<br>';
-// }
-// if (isset($_POST['submit']) && $random == 3) {
-//     echo 'ordinateur choisit : Feuille<br>';
-// }
-
-// if (isset($_POST['PCF'])) {
-//     echo '<div>Vous avez choisi : '.$_POST['PCF'].'</div>';
-// }
-
-// $choix = $_POST['PCF'];
-
-// if ($random == $choix) {
-//     echo 'egalite';
-// } elseif (($choix == 'Pierre' && $random == 2) OR ($choix == 'Ciseau' && $random == 3) OR ($choix == 'Feuille' && $random == 1)) {
-//     echo ' j\'ai gagne';
-// }else{
-//     echo 'ordinateur gagne';
-// }
-
-?>
