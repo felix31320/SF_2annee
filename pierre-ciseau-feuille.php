@@ -1,18 +1,20 @@
 <?php
-
+echo '55555555555555555555555555555555555555555555555555';
 if (isset($_POST['choix'])) {
+
     $choix = $_POST['choix'];
-    $Ordinateur = Ordinateur();
+
+
+    $options = ["pierre", "papier", "ciseaux"];
+    $Ordinateur = array_rand($options);
+
     $resultat = Resultat($choix, $Ordinateur);
+
     echo 'Votre choix : '.$choix. '<br>';
     echo 'le choix d ordianteur : '.$Ordinateur.'<br>';
+
 } 
 
-function Ordinateur() {
-    $options = ["pierre", "papier", "ciseaux"];
-    $choix = array_rand($options);
-    return $options[$choix];
-}
 
 function Resultat($choix, $Ordinateur) {
     if ($choix === $Ordinateur) {
@@ -25,6 +27,33 @@ function Resultat($choix, $Ordinateur) {
 }
 
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="pierre-ciseau-feuille.php" method="POST">
+        
+        <input type="radio" name="choix" value="pierre" >Pierre
+        <input type="radio" name="choix" value="papier" >Papier
+        <input type="radio" name="choix" value="ciseaux" >Ciseaux
+
+        <input type="submit" name="submit" value="Jouer">
+    </form>
+    
+</body>
+</html>
+
+
+
+
+
+
 
 
 <?php
@@ -56,25 +85,3 @@ function Resultat($choix, $Ordinateur) {
 // }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    <form action="pierre-ciseau-feuille.php" method="POST">
-        
-        <input type="radio" name="choix" value="pierre" >Pierre
-        <input type="radio" name="choix" value="papier" >Papier
-        <input type="radio" name="choix" value="ciseaux" >Ciseaux
-
-        <input type="submit" name="submit" value="Jouer">
-    </form>
-    
-</body>
-</html>
-
-
